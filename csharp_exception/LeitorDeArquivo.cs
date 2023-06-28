@@ -6,18 +6,28 @@ public class LeitorDeArquivo //: IDisposable
 
     public LeitorDeArquivo(string arquivo)
     {
-        Arquivo = arquivo;
-
-        // throw new FileNotFoundException();
+        try
+        {
+            Arquivo = arquivo;
+        }
+        catch (FileNotFoundException)
+        {
+            throw new FileNotFoundException();
+        }
 
         Console.WriteLine("Abrindo arquivo: " + arquivo);
     }
 
     public string LerProximaLinha()
     {
-        Console.WriteLine("Lendo linha. . .");
-
-        //throw new IOException();
+        try
+        {
+            Console.WriteLine("Lendo linha. . .");
+        }
+        catch (IOException)
+        {
+            throw new IOException();
+        }
 
         return "Linha do arquivo";
     }

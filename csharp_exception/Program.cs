@@ -3,10 +3,20 @@ using csharp_exception.Contas;
 using csharp_exception;
 
 LeitorDeArquivo leitor = new LeitorDeArquivo("contas.txt");
-leitor.LerProximaLinha();
-leitor.LerProximaLinha();
-leitor.Fechar();
 
+try
+{
+    leitor.LerProximaLinha();
+    leitor.LerProximaLinha();
+}
+catch(IOException)
+{
+    Console.WriteLine("Leitura de arquivo interrompida");
+}
+finally
+{
+    leitor.Fechar();
+}
 /*
 try
 {
