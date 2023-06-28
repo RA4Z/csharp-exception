@@ -1,4 +1,4 @@
-﻿namespace ByteBank;
+﻿namespace csharp_exception;
 
 public class LeitorDeArquivo //: IDisposable
 {
